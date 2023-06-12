@@ -1,6 +1,7 @@
 package com.example.attendancebotspring.configurations;
 
 
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Objects;
+//@PersistenceContext(name = "${spring.jpa.properties.hibernate.dialect.mysql}")
 
 @Configuration
 @EnableTransactionManagement

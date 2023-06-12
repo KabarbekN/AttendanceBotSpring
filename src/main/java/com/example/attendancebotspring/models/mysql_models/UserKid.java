@@ -10,12 +10,12 @@ import org.springframework.beans.factory.annotation.Autowire;
 
 @Entity
 @Data
-@Table(name = "user_kid")
+@Table(name = "user_kid", schema ="attendanceBot")
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserKid {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

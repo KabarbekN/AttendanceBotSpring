@@ -2,6 +2,7 @@ package com.example.attendancebotspring.configurations;
 
 import javax.sql.DataSource;
 
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,7 +21,7 @@ import jakarta.persistence.EntityManagerFactory;
 
 import java.util.Objects;
 
-
+//@PersistenceContext(name = "${spring.jpa.properties.hibernate.dialect.firebird}")
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
@@ -65,7 +66,6 @@ public class SecondaryDatabaseConnection {
             final @Qualifier("secondaryEntityManagerFactory") LocalContainerEntityManagerFactoryBean secondaryEntityManagerFactory
             ){
         return new JpaTransactionManager(Objects.requireNonNull(secondaryEntityManagerFactory.getObject()));
-
     }
 
 

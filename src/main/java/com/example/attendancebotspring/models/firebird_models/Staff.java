@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Staff {
     @Id
-    @Column(name = "ID_TB_IN")
-    private Long ID_TB_IN;
+    @Column(name = "ID_STAFF")
+    private Long ID_STAFF;
     @Column(name = "FULL_FIO")
     private String FULL_FIO;
     @Column(name = "TABEL_ID")

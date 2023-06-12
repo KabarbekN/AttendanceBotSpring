@@ -20,7 +20,6 @@ public class TabelIntermediadate {
     @Id
     @Column(name = "ID_TB_IN")
     private Long ID_TB_IN;
-
     @Column(name = "STAFF_ID")
     private Long STAFF_ID;
     @Column(name = "TYPE_PASS")

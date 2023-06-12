@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "kid")
+@Table(name = "kid",schema = "attendanceBot")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Kid {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
