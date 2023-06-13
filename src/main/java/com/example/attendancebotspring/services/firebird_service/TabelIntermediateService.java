@@ -27,17 +27,7 @@ public class TabelIntermediateService {
 
 
     @Autowired
-    UserService userService;
-    @Autowired
-    KidService kidService;
-    @Autowired
-    BotConfiguration botConfiguration;
-    @Autowired
-    UserKidService userKidService;
-    @Autowired
-    StaffService staffService;
-    @Autowired
-    IKidRepository kidRepository;
+    TelegramBot telegramBot;
 
 
     private final ITabelIntermediadateRepository tabelIntermediadateRepository;
@@ -64,7 +54,7 @@ public class TabelIntermediateService {
                         Date.valueOf(currentDate), Time.valueOf(oneMinuteAgoTime));
 
         if (records.size() > 0){
-            TelegramBot telegramBot = new TelegramBot(userService, kidService, userKidService, staffService, botConfiguration,kidRepository );
+//            TelegramBot telegramBot = new TelegramBot(userService, kidService, userKidService, staffService, botConfiguration,kidRepository );
             telegramBot.sendNotification(records);
         }
 
