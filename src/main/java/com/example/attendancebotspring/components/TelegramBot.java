@@ -138,6 +138,8 @@ public class TelegramBot extends TelegramLongPollingBot {
                     setLanguage(chatId, "Русский язык");
                     telegramBotStates = TelegramBotStates.INITIAL;
                     break;
+                case "Тілді өзгерту", "Изменить язык":
+                    chooseLanguage(chatId);
 
             }
             switch (telegramBotStates) {
@@ -162,7 +164,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         row.add("Русский язык");
         keyboardRows.add(row);
         replyKeyboardMarkup.setKeyboard(keyboardRows);
-        sendMessageWithKeyboard(chatId, "Тілді таңдаңыз", replyKeyboardMarkup);
+        sendMessageWithKeyboard(chatId, sentenceTranslation("Тілді таңдаңыз"), replyKeyboardMarkup);
     }
 
     private void addBotCommands(Long chatId){
@@ -357,12 +359,15 @@ public class TelegramBot extends TelegramLongPollingBot {
         List<KeyboardRow> keyboardRows = new ArrayList<>();
         KeyboardRow row1 = new KeyboardRow();
         KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
         row1.add(sentenceTranslation("Тіркелу"));
         row1.add(sentenceTranslation("Баланы қосу"));
         row2.add(sentenceTranslation("Жазылым"));
         row2.add(sentenceTranslation("Жазылудан бас тарту"));
+        row3.add(sentenceTranslation("Тілді өзгерту"));
         keyboardRows.add(row1);
         keyboardRows.add(row2);
+        keyboardRows.add(row3);
         replyKeyboardMarkup.setKeyboard(keyboardRows);
         return replyKeyboardMarkup;
     }
@@ -433,8 +438,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         return keyboardMarkup;
     }
-
-
     public ReplyKeyboardMarkup readyReplyKeyboardMarkUp() {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         replyKeyboardMarkup.setSelective(true);
